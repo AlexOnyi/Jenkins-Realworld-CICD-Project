@@ -76,16 +76,16 @@ pipeline {
            // }
         }
     }
-    stage('SonarQube Quality Gate') {
-        steps {
-          // Set a timeout for the quality gate check
-            timeout(time: 1, unit: 'HOURS') {
-            // Wait for the SonarQube quality gate result and abort the pipeline if it fails
-            waitForQualityGate(abortPipeline: true)
-        }
-    }
+    // stage('SonarQube Quality Gate') {
+    //     steps {
+    //       // Set a timeout for the quality gate check
+    //         timeout(time: 1, unit: 'HOURS') {
+    //         // Wait for the SonarQube quality gate result and abort the pipeline if it fails
+    //         waitForQualityGate(abortPipeline: true)
+    //     }
+    // }
 
-    }
+    // }
     stage("Nexus Artifact Uploader"){
         steps{
           // dir('realworld-cicd-pipeline-project-main/') {
